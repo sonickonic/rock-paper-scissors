@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import Header from "./header";
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,7 +20,11 @@ const Container = styled.div`
 `;
 
 const Game = function Game() {
-  return <Container></Container>;
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
 };
 
 export default Game;
