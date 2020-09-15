@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import Header from "./header";
+import Rules from "./Rules";
 
 const Container = styled.div`
   display: flex;
@@ -23,6 +24,7 @@ const Game = function Game() {
   return (
     <Container>
       <Header />
+      <Rules />
     </Container>
   );
 };
