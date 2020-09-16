@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Header from "./header";
 import Rules from "./Rules";
+import InitialGame from "./InitialGame";
 
 const Container = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ const Game = function Game() {
   return (
     <Container>
       <Header />
+      <InitialGame />
       <Rules />
     </Container>
   );
