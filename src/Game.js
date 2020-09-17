@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import Header from "./header";
 import Rules from "./Rules";
 import InitialGame from "./InitialGame";
+import Throw from "./Throw";
 
 const Container = styled.div`
   display: flex;
@@ -22,10 +23,21 @@ const Container = styled.div`
 `;
 
 const Game = function Game() {
+  const [selected, setSelected] = useState([]);
+
+  const handleSelection = (shape) => {
+    setSelected(shape);
+  };
+
   return (
     <Container>
       <Header />
-      <InitialGame />
+      {selected.length === 0 ? (
+        <InitialGame handleSelection={handleSelection} />
+      ) : (
+        <Throw selected={selected} />
+      )}
+
       <Rules />
     </Container>
   );

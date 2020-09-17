@@ -16,11 +16,17 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-function InitialGame() {
+function InitialGame({ handleSelection }) {
   return (
     <Container>
       {shapes.map((shape) => (
-        <Chip shape={shape} key={shape.name} />
+        <Chip
+          shape={shape}
+          key={shape.name}
+          onClick={() => {
+            handleSelection(shape);
+          }}
+        />
       ))}
     </Container>
   );

@@ -38,9 +38,13 @@ const Shape = styled.img`
   transform: translate(-50%, -50%);
 `;
 
-function Chip({ shape }) {
+function Chip({ shape, onClick }) {
   return (
-    <ChipContainer lightColor={shape.lightColor} darkColor={shape.darkColor}>
+    <ChipContainer
+      onClick={onClick}
+      lightColor={shape.lightColor}
+      darkColor={shape.darkColor}
+    >
       <Shape src={shape.imageSrc} alt={shape.name} />
     </ChipContainer>
   );
