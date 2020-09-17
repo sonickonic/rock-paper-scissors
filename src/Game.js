@@ -5,6 +5,7 @@ import Header from "./header";
 import Rules from "./Rules";
 import InitialGame from "./InitialGame";
 import Throw from "./Throw";
+import PlayAgain from "./PlayAgain";
 
 const Container = styled.div`
   display: flex;
@@ -29,6 +30,10 @@ const Game = function Game() {
     setSelected(shape);
   };
 
+  const handleClick = () => {
+    setSelected([]);
+  };
+
   return (
     <Container>
       <Header />
@@ -37,7 +42,7 @@ const Game = function Game() {
       ) : (
         <Throw selected={selected} />
       )}
-
+      {selected.length === 0 ? null : <PlayAgain handleClick={handleClick} />}
       <Rules />
     </Container>
   );
