@@ -24,25 +24,25 @@ const Container = styled.div`
 `;
 
 const Game = function Game() {
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState();
 
   const handleSelection = (shape) => {
     setSelected(shape);
   };
 
   const handleClick = () => {
-    setSelected([]);
+    setSelected();
   };
 
   return (
     <Container>
       <Header />
-      {selected.length === 0 ? (
+      {!selected ? (
         <InitialGame handleSelection={handleSelection} />
       ) : (
         <Throw selected={selected} />
       )}
-      {selected.length === 0 ? null : <PlayAgain handleClick={handleClick} />}
+      {selected && <PlayAgain handleClick={handleClick} />}
       <Rules />
     </Container>
   );
