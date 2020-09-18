@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Header from "./header";
@@ -6,6 +6,7 @@ import Rules from "./Rules";
 import InitialGame from "./InitialGame";
 import Throw from "./Throw";
 import PlayAgain from "./PlayAgain";
+import shapes from "./data";
 
 const Container = styled.div`
   display: flex;
@@ -25,6 +26,28 @@ const Container = styled.div`
 
 const Game = function Game() {
   const [selected, setSelected] = useState();
+  const [randomNumber, setRandomNumber] = useState();
+  const [result, setResult] = useState();
+
+  useEffect(() => {
+    if (!selected) return;
+
+    setTimeout(() => {
+      setRandomNumber(Math.floor(Math.random() * 3));
+    }, 1000);
+  }, [selected]);
+
+  useEffect(() => {
+    if (!randomNumber && randomNumber !== 0) return;
+
+    if (selected.beats === shapes[randomNumber].name) {
+      setResult("win");
+    } else if (selected.name === shapes[randomNumber].name) {
+      setResult("draw");
+    } else {
+      setResult("lose");
+    }
+  }, [randomNumber]);
 
   const handleSelection = (shape) => {
     setSelected(shape);
@@ -32,6 +55,8 @@ const Game = function Game() {
 
   const handleClick = () => {
     setSelected();
+    setRandomNumber();
+    setResult();
   };
 
   return (
@@ -40,9 +65,9 @@ const Game = function Game() {
       {!selected ? (
         <InitialGame handleSelection={handleSelection} />
       ) : (
-        <Throw selected={selected} />
+        <Throw randomNumber={randomNumber} selected={selected} />
       )}
-      {selected && <PlayAgain handleClick={handleClick} />}
+      {result && <PlayAgain result={result} handleClick={handleClick} />}
       <Rules />
     </Container>
   );

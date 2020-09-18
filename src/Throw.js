@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Chip from "./Chip";
@@ -20,15 +20,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-function Throw({ selected }) {
-  const [randomNumber, setRandomNumber] = useState(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setRandomNumber(Math.floor(Math.random() * 3));
-    }, 1000);
-  }, []);
-
+function Throw({ selected, randomNumber }) {
   return (
     <Container>
       <div>
