@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ChipContainer = styled.div`
+const HandContainer = styled.div`
   position: relative;
   background: transparent;
   width: 13.4rem;
@@ -22,7 +22,7 @@ const ChipContainer = styled.div`
 `;
 
 function Placeholder() {
-  return <ChipContainer />;
+  return <HandContainer />;
 }
 
 export default Placeholder;

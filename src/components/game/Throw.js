@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Chip from "./Chip";
+import Hand from "./Hand";
 import shapes from "./data";
 import Placeholder from "./Placeholder";
 
@@ -24,12 +24,12 @@ function Throw({ selected, randomNumber }) {
   return (
     <Container>
       <div>
-        <Chip shape={selected} />
+        <Hand shape={selected} />
         <Text>you picked</Text>
       </div>
       <div>
         {randomNumber || randomNumber === 0 ? (
-          <Chip shape={shapes[randomNumber]} />
+          <Hand shape={shapes[randomNumber]} />
         ) : (
           <Placeholder />
         )}

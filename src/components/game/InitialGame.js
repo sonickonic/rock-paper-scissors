@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import shapes from "./data";
-import Chip from "./Chip";
+import Hand from "./Hand";
 import Background from "./images/bg-triangle.svg";
 
 const Container = styled.div`
@@ -20,7 +20,7 @@ function InitialGame({ handleSelection }) {
   return (
     <Container>
       {shapes.map((shape) => (
-        <Chip
+        <Hand
           shape={shape}
           key={shape.name}
           onClick={() => {

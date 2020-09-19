@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ChipContainer = styled.div`
+const HandContainer = styled.div`
   position: relative;
   background: linear-gradient(
     ${(props) => props.lightColor},
@@ -38,16 +38,16 @@ const Shape = styled.img`
   transform: translate(-50%, -50%);
 `;
 
-function Chip({ shape, onClick }) {
+const Hand = ({ shape, onClick }) => {
   return (
-    <ChipContainer
+    <HandContainer
       onClick={onClick}
       lightColor={shape.lightColor}
       darkColor={shape.darkColor}
     >
       <Shape src={shape.imageSrc} alt={shape.name} />
-    </ChipContainer>
+    </HandContainer>
   );
-}
+};
 
-export default Chip;
+export default Hand;
