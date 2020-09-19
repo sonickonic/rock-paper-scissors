@@ -23,9 +23,7 @@ const Points = styled.div`
   line-height: 1;
 `;
 
-function Score() {
-  const [score, serScore] = useState("0");
-
+function Score({ score }) {
   return (
     <Container>
       <Title>score</Title>

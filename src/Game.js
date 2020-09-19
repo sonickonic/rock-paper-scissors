@@ -28,6 +28,13 @@ const Game = function Game() {
   const [selected, setSelected] = useState();
   const [randomNumber, setRandomNumber] = useState();
   const [result, setResult] = useState();
+  const [score, setScore] = useState(
+    parseInt(localStorage.getItem("score")) || 0
+  );
+
+  useEffect(() => {
+    localStorage.setItem("score", score);
+  }, [score]);
 
   useEffect(() => {
     if (!selected) return;
@@ -42,10 +49,12 @@ const Game = function Game() {
 
     if (selected.beats === shapes[randomNumber].name) {
       setResult("win");
+      setScore(score + 1);
     } else if (selected.name === shapes[randomNumber].name) {
       setResult("draw");
     } else {
       setResult("lose");
+      setScore(score - 1);
     }
   }, [randomNumber]);
 
@@ -61,7 +70,7 @@ const Game = function Game() {
 
   return (
     <Container>
-      <Header />
+      <Header score={score} />
       {!selected ? (
         <InitialGame handleSelection={handleSelection} />
       ) : (
