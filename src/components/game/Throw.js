@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import Hand from "./Hand";
-import shapes from "./data";
 import Placeholder from "./Placeholder";
 
 const Text = styled.p`
@@ -20,16 +19,16 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-function Throw({ selected, randomNumber }) {
+function Throw({ userSelectedHand, botSelectedHand }) {
   return (
     <Container>
       <div>
-        <Hand shape={selected} />
+        <Hand shape={userSelectedHand} />
         <Text>you picked</Text>
       </div>
       <div>
-        {randomNumber || randomNumber === 0 ? (
-          <Hand shape={shapes[randomNumber]} />
+        {botSelectedHand ? (
+          <Hand shape={botSelectedHand} />
         ) : (
           <Placeholder />
         )}

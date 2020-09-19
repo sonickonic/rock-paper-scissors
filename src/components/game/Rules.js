@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import ImageSrc from "./images/image-rules.svg";
-import IconSrc from "./images/icon-close.svg";
+import ImageSrc from "../../images/image-rules.svg";
+import IconSrc from "../../images/icon-close.svg";
 
 const Container = styled.div`
   display: flex;

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import Header from "./header";
+import Header from "../header";
 import Rules from "./Rules";
 import InitialGame from "./InitialGame";
 import Throw from "./Throw";
 import PlayAgain from "./PlayAgain";
-import shapes from "./data";
+import shapes from "../../data";
 
 const Container = styled.div`
   display: flex;
@@ -24,9 +24,9 @@ const Container = styled.div`
   padding: 3rem 3rem 5.5rem;
 `;
 
-const Game = function Game() {
-  const [selected, setSelected] = useState();
-  const [randomNumber, setRandomNumber] = useState();
+const Game = () => {
+  const [userSelectedHand, setUserSelectedHand] = useState();
+  const [botSelectedHand, setBotSelectedHand] = useState();
   const [result, setResult] = useState();
   const [score, setScore] = useState(
     parseInt(localStorage.getItem("score")) || 0
@@ -37,46 +37,47 @@ const Game = function Game() {
   }, [score]);
 
   useEffect(() => {
-    if (!selected) return;
+    if (!userSelectedHand) return;
 
     setTimeout(() => {
-      setRandomNumber(Math.floor(Math.random() * 3));
+      const randomIndex = Math.floor(Math.random() * 3);
+      setBotSelectedHand(shapes[randomIndex]);
     }, 1000);
-  }, [selected]);
+  }, [userSelectedHand]);
 
   useEffect(() => {
-    if (!randomNumber && randomNumber !== 0) return;
+    if (!botSelectedHand && botSelectedHand !== 0) return;
 
-    if (selected.beats === shapes[randomNumber].name) {
+    if (userSelectedHand.beats === botSelectedHand.name) {
       setResult("win");
       setScore(score + 1);
-    } else if (selected.name === shapes[randomNumber].name) {
+    } else if (userSelectedHand.name === botSelectedHand.name) {
       setResult("draw");
     } else {
       setResult("lose");
       setScore(score - 1);
     }
-  }, [randomNumber]);
+  }, [botSelectedHand]);
 
   const handleSelection = (shape) => {
-    setSelected(shape);
+    setUserSelectedHand(shape);
   };
 
-  const handleClick = () => {
-    setSelected();
-    setRandomNumber();
+  const clickPlayAgain = () => {
+    setUserSelectedHand();
+    setBotSelectedHand();
     setResult();
   };
 
   return (
     <Container>
       <Header score={score} />
-      {!selected ? (
-        <InitialGame handleSelection={handleSelection} />
+      {userSelectedHand ? (
+        <Throw botSelectedHand={botSelectedHand} userSelectedHand={userSelectedHand} />
       ) : (
-        <Throw randomNumber={randomNumber} selected={selected} />
+        <InitialGame handleSelection={handleSelection} />
       )}
-      {result && <PlayAgain result={result} handleClick={handleClick} />}
+      {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
       <Rules />
     </Container>
   );

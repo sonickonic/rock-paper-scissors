@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import shapes from "./data";
+import shapes from "../../data";
 import Hand from "./Hand";
-import Background from "./images/bg-triangle.svg";
+import Background from "../../images/bg-triangle.svg";
 
 const Container = styled.div`
   background-image: url(${Background});
