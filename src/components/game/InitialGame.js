@@ -16,7 +16,7 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-function InitialGame({ handleSelection }) {
+const InitialGame = ({ handleSelection }) => {
   return (
     <Container>
       {shapes.map((shape) => (
@@ -30,6 +30,6 @@ function InitialGame({ handleSelection }) {
       ))}
     </Container>
   );
-}
+};
 
 export default InitialGame;

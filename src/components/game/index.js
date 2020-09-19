@@ -73,7 +73,10 @@ const Game = () => {
     <Container>
       <Header score={score} />
       {userSelectedHand ? (
-        <Throw botSelectedHand={botSelectedHand} userSelectedHand={userSelectedHand} />
+        <Throw
+          botSelectedHand={botSelectedHand}
+          userSelectedHand={userSelectedHand}
+        />
       ) : (
         <InitialGame handleSelection={handleSelection} />
       )}

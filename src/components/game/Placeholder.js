@@ -21,8 +21,8 @@ const HandContainer = styled.div`
   }
 `;
 
-function Placeholder() {
+const Placeholder = () => {
   return <HandContainer />;
-}
+};
 
 export default Placeholder;

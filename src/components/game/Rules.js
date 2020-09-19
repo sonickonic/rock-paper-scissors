@@ -42,7 +42,7 @@ const Title = styled.h3`
   font-weight: 700;
 `;
 
-function Rules() {
+const Rules = () => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -72,6 +72,6 @@ function Rules() {
       ) : null}
     </div>
   );
-}
+};
 
 export default Rules;

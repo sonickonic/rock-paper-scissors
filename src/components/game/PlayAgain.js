@@ -35,13 +35,13 @@ const Container = styled.div`
   text-align: center;
 `;
 
-function PlayAgain({ handleClick, result }) {
+const PlayAgain = ({ handleClick, result }) => {
   return (
     <Container>
       <Title>{result === "draw" ? `a ${result}` : `you ${result}`}</Title>
       <Button onClick={handleClick}>play again</Button>
     </Container>
   );
-}
+};
 
 export default PlayAgain;

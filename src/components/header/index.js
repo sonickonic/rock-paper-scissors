@@ -20,13 +20,13 @@ const LogoStyle = styled.img`
   height: 4.7rem;
 `;
 
-function Header({ score }) {
+const Header = ({ score }) => {
   return (
     <Container>
       <LogoStyle alt="Logo" src={Logo} />
       <Score score={score} />
     </Container>
   );
-}
+};
 
 export default Header;

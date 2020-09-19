@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -23,13 +23,13 @@ const Points = styled.div`
   line-height: 1;
 `;
 
-function Score({ score }) {
+const Score = ({ score }) => {
   return (
     <Container>
       <Title>score</Title>
       <Points>{score}</Points>
     </Container>
   );
-}
+};
 
 export default Score;
