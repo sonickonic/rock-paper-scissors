@@ -1,21 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
-const Button = styled.a`
-  display: inline-block;
-  color: var(--text);
-  background-color: var(--white);
-  width: 220px;
-  padding: 1rem 3.6rem;
-  border-radius: 0.7rem;
-  margin-top: auto;
-
-  font-weight: 600;
-  font-size: 1.6rem;
-  letter-spacing: 0.15em;
-  text-align: center;
-  cursor: pointer;
-`;
+import Button from "../Button";
 
 const Title = styled.p`
   text-align: center;
@@ -39,7 +24,7 @@ const PlayAgain = ({ handleClick, result }) => {
   return (
     <Container>
       <Title>{result === "draw" ? `a ${result}` : `you ${result}`}</Title>
-      <Button onClick={handleClick}>play again</Button>
+      <Button primary label="play again" handleClick={handleClick} />
     </Container>
   );
 };

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import ImageSrc from "../../images/image-rules.svg";
 import IconSrc from "../../images/icon-close.svg";
+import Button from "../Button";
 
 const Container = styled.div`
   display: flex;
@@ -17,18 +18,6 @@ const Container = styled.div`
   width: 100%;
   top: 0;
   right: 0;
-`;
-
-const RulesButton = styled.a`
-  display: inline-block;
-  color: var(--white);
-  font-size: 1.6rem;
-  letter-spacing: 0.15em;
-  border: 1px solid var(--white);
-  padding: 1rem 3.6rem;
-  border-radius: 0.7rem;
-  margin-top: auto;
-  cursor: pointer;
 `;
 
 const CloseButton = styled.a`
@@ -60,7 +49,7 @@ const Rules = () => {
 
   return (
     <div>
-      <RulesButton onClick={handleClick}>Rules</RulesButton>
+      <Button handleClick={handleClick} label="Rules" />
       {open ? (
         <Container>
           <Title>rules</Title>
