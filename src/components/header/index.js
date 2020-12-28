@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../../images/logo.svg";
 import Score from "./Score";
 
 const Container = styled.div`
@@ -16,14 +15,15 @@ const Container = styled.div`
 `;
 
 const LogoStyle = styled.img`
-  width: 8.1rem;
   height: 4.7rem;
+
+  cursor: pointer;
 `;
 
-const Header = ({ score }) => {
+const Header = ({ score, gameType, handleClick }) => {
   return (
     <Container>
-      <LogoStyle alt="Logo" src={Logo} />
+      <LogoStyle alt="Logo" src={gameType.logo} onClick={handleClick} />
       <Score score={score} />
     </Container>
   );

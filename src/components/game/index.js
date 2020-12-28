@@ -71,9 +71,16 @@ const Game = () => {
     setResult();
   };
 
+  const handleClick = () => {
+    gameType === games[0] ? setGameType(games[1]) : setGameType(games[0]);
+    setUserSelectedHand();
+    setBotSelectedHand();
+    setResult();
+  };
+
   return (
     <Container>
-      <Header score={score} />
+      <Header score={score} gameType={gameType} handleClick={handleClick} />
       {userSelectedHand ? (
         <Throw
           botSelectedHand={botSelectedHand}
