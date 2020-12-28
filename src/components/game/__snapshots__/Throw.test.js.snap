@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Throw after bot selected hand renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy lfNJJV"
+  >
+    <div>
+      <div
+        class="sc-AxjAm hUUgft"
+      >
+        <img
+          alt="paper"
+          class="sc-AxirZ hctvIa"
+          src="icon-paper.svg"
+        />
+      </div>
+      <p
+        class="sc-AxhCb fpVQKk"
+      >
+        you picked
+      </p>
+    </div>
+    <div>
+      <div
+        class="sc-AxjAm gnslzt"
+      >
+        <img
+          alt="scissors"
+          class="sc-AxirZ hctvIa"
+          src="icon-scissors.svg"
+        />
+      </div>
+      <p
+        class="sc-AxhCb fpVQKk"
+      >
+        the house picked
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Throw before bot selected hand renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhUy lfNJJV"
+  >
+    <div>
+      <div
+        class="sc-AxjAm hUUgft"
+      >
+        <img
+          alt="paper"
+          class="sc-AxirZ hctvIa"
+          src="icon-paper.svg"
+        />
+      </div>
+      <p
+        class="sc-AxhCb fpVQKk"
+      >
+        you picked
+      </p>
+    </div>
+    <div>
+      <div
+        class="sc-AxiKw iMJUuS"
+      />
+      <p
+        class="sc-AxhCb fpVQKk"
+      >
+        the house picked
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;
