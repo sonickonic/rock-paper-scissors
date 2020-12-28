@@ -7,6 +7,7 @@ import InitialGame from "./InitialGame";
 import Throw from "./Throw";
 import PlayAgain from "./PlayAgain";
 import shapes from "../../data";
+import games from "../../gameTypes";
 
 const Container = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ const Container = styled.div`
 `;
 
 const Game = () => {
+  const [gameType, setGameType] = useState(games[0]);
   const [userSelectedHand, setUserSelectedHand] = useState();
   const [botSelectedHand, setBotSelectedHand] = useState();
   const [result, setResult] = useState();
@@ -40,18 +42,18 @@ const Game = () => {
     if (!userSelectedHand) return;
 
     setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * 3);
+      const randomIndex = Math.floor(Math.random() * gameType.shapes.length);
       setBotSelectedHand(shapes[randomIndex]);
     }, 1000);
-  }, [userSelectedHand]);
+  }, [gameType.shapes.length, userSelectedHand]);
 
   useEffect(() => {
     if (!botSelectedHand && botSelectedHand !== 0) return;
 
-    if (userSelectedHand.beats === botSelectedHand.name) {
+    if (userSelectedHand.beats.includes(botSelectedHand.name)) {
       setResult("win");
       setScore(score + 1);
-    } else if (userSelectedHand.name === botSelectedHand.name) {
+    } else if (userSelectedHand.name.includes(botSelectedHand.name)) {
       setResult("draw");
     } else {
       setResult("lose");
