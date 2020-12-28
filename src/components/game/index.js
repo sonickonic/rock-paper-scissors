@@ -87,7 +87,7 @@ const Game = () => {
           userSelectedHand={userSelectedHand}
         />
       ) : (
-        <InitialGame handleSelection={handleSelection} />
+        <InitialGame gameType={gameType} handleSelection={handleSelection} />
       )}
       {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
       <Rules gameType={gameType} />
