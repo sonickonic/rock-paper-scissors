@@ -13,6 +13,7 @@ const games = [
     logo: logo,
     background: triangle,
     rules: rules,
+    iconSize: "big",
   },
   {
     name: "The Lizard-Spock Expansion",
@@ -20,6 +21,7 @@ const games = [
     logo: logoBonus,
     background: pentagon,
     rules: rulesBonus,
+    iconSize: "small",
   },
 ];
 

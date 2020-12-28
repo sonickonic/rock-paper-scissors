@@ -21,6 +21,7 @@ const InitialGame = ({ handleSelection }) => {
     <Container>
       {shapes.map((shape) => (
         <Hand
+          gameType={gameType}
           shape={shape}
           key={shape.name}
           onClick={() => {
