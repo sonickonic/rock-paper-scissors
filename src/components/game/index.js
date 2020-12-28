@@ -83,7 +83,7 @@ const Game = () => {
         <InitialGame handleSelection={handleSelection} />
       )}
       {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
-      <Rules />
+      <Rules gameType={gameType} />
     </Container>
   );
 };

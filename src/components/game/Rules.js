@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import ImageSrc from "../../images/image-rules.svg";
 import IconSrc from "../../images/icon-close.svg";
 import Button from "../Button";
 
@@ -31,7 +30,7 @@ const Title = styled.h3`
   font-weight: 700;
 `;
 
-const Rules = () => {
+const Rules = ({ gameType }) => {
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -53,7 +52,7 @@ const Rules = () => {
       {open ? (
         <Container>
           <Title>rules</Title>
-          <img alt="Game rules" src={ImageSrc} />
+          <img alt="Game rules" src={gameType.rules} />
           <CloseButton>
             <img onClick={handleClick} alt="Close button" src={IconSrc} />
           </CloseButton>
