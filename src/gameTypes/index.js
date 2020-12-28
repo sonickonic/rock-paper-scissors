@@ -1,10 +1,10 @@
-import logo from "./images/logo.svg";
-import triangle from "./images/bg-triangle.svg";
-import rules from "./images/image-rules.svg";
+import logo from "../images/logo.svg";
+import triangle from "../images/bg-triangle.svg";
+import rules from "../images/image-rules.svg";
 
-import logoBonus from "./images/logo-bonus.svg";
-import pentagon from "./images/bg-pentagon.svg";
-import rulesBonus from "./images/image-rules-bonus.svg";
+import logoBonus from "../images/logo-bonus.svg";
+import pentagon from "../images/bg-pentagon.svg";
+import rulesBonus from "../images/image-rules-bonus.svg";
 
 const games = [
   {
