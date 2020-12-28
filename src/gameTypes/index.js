@@ -1,10 +1,12 @@
 import logo from "../images/logo.svg";
 import triangle from "../images/bg-triangle.svg";
 import rules from "../images/image-rules.svg";
+import ClassicContainer from "../gameTypes/ClassicContainer";
 
 import logoBonus from "../images/logo-bonus.svg";
 import pentagon from "../images/bg-pentagon.svg";
 import rulesBonus from "../images/image-rules-bonus.svg";
+import ExpansionContainer from "../gameTypes/ExpansionContainer";
 
 const games = [
   {
@@ -14,6 +16,7 @@ const games = [
     background: triangle,
     rules: rules,
     iconSize: "big",
+    container: ClassicContainer,
   },
   {
     name: "The Lizard-Spock Expansion",
@@ -22,6 +25,7 @@ const games = [
     background: pentagon,
     rules: rulesBonus,
     iconSize: "small",
+    container: ExpansionContainer,
   },
 ];
 
