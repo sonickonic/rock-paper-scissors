@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rules renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw fbTzvK"
+  >
+    <h3
+      class="sc-AxhUy jFsYCh"
+    >
+      rules
+    </h3>
+    <img
+      alt="Game rules"
+    />
+    <a
+      class="sc-AxhCb hcgjWe"
+    >
+      <img
+        alt="Close button"
+        src="icon-close.svg"
+      />
+    </a>
+  </div>
+</DocumentFragment>
+`;
