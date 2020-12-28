@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import IconSrc from "../../images/icon-close.svg";
-import Button from "../Button";
 
 const Container = styled.div`
   display: flex;
@@ -30,35 +29,15 @@ const Title = styled.h3`
   font-weight: 700;
 `;
 
-const Rules = ({ gameType }) => {
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    open ? setOpen(false) : setOpen(true);
-  };
-
-  useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.keyCode === 27) {
-        setOpen(false);
-      }
-    };
-    window.addEventListener("keydown", handleEsc);
-  }, []);
-
+const Rules = ({ gameType, handleClick }) => {
   return (
-    <div>
-      <Button handleClick={handleClick} label="Rules" />
-      {open ? (
-        <Container>
-          <Title>rules</Title>
-          <img alt="Game rules" src={gameType.rules} />
-          <CloseButton>
-            <img onClick={handleClick} alt="Close button" src={IconSrc} />
-          </CloseButton>
-        </Container>
-      ) : null}
-    </div>
+    <Container>
+      <Title>rules</Title>
+      <img alt="Game rules" src={gameType.rules} />
+      <CloseButton>
+        <img onClick={handleClick} alt="Close button" src={IconSrc} />
+      </CloseButton>
+    </Container>
   );
 };
 

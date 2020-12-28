@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import Header from "../header";
+import Button from "../Button";
 import Rules from "./Rules";
 import InitialGame from "./InitialGame";
 import Throw from "./Throw";
@@ -27,6 +28,7 @@ const Container = styled.div`
 
 const Game = () => {
   const [gameType, setGameType] = useState(games[0]);
+  const [isRulesOpen, setIsRulesOpen] = useState(false);
   const [userSelectedHand, setUserSelectedHand] = useState();
   const [botSelectedHand, setBotSelectedHand] = useState();
   const [result, setResult] = useState();
@@ -78,6 +80,19 @@ const Game = () => {
     setResult();
   };
 
+  const toggleIsRulesOpen = () => {
+    setIsRulesOpen(!isRulesOpen);
+  };
+
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.keyCode === 27) {
+        setIsRulesOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+  }, []);
+
   return (
     <Container>
       <Header score={score} gameType={gameType} handleClick={handleClick} />
@@ -90,7 +105,10 @@ const Game = () => {
         <InitialGame gameType={gameType} handleSelection={handleSelection} />
       )}
       {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
-      <Rules gameType={gameType} />
+      <Button handleClick={toggleIsRulesOpen} label="Rules" />
+      {isRulesOpen && (
+        <Rules gameType={gameType} handleClick={toggleIsRulesOpen} />
+      )}
     </Container>
   );
 };
