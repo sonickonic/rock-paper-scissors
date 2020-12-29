@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayAgain renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw cwloZq"
+  >
+    <p
+      class="sc-AxirZ bEbECx"
+    >
+      you win
+    </p>
+    <button
+      class="sc-AxjAm gvkpfy"
+    >
+      play again
+    </button>
+  </div>
+</DocumentFragment>
+`;
