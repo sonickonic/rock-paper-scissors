@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InitialGame classic game renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxiKw cYYYVP"
+  >
+    <div
+      class="sc-AxjAm hUUgft"
+    >
+      <img
+        alt="paper"
+        class="sc-AxirZ hctvIa"
+        src="icon-paper.svg"
+      />
+    </div>
+    <div
+      class="sc-AxjAm gnslzt"
+    >
+      <img
+        alt="scissors"
+        class="sc-AxirZ hctvIa"
+        src="icon-scissors.svg"
+      />
+    </div>
+    <div
+      class="sc-AxjAm fhahUp"
+    >
+      <img
+        alt="rock"
+        class="sc-AxirZ hctvIa"
+        src="icon-rock.svg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`InitialGame expansion game renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxhCb ATBCy"
+  >
+    <div
+      class="sc-AxjAm eMABbZ"
+    >
+      <img
+        alt="paper"
+        class="sc-AxirZ cQONtY"
+        src="icon-paper.svg"
+      />
+    </div>
+    <div
+      class="sc-AxjAm cdByLZ"
+    >
+      <img
+        alt="scissors"
+        class="sc-AxirZ cQONtY"
+        src="icon-scissors.svg"
+      />
+    </div>
+    <div
+      class="sc-AxjAm XjvgV"
+    >
+      <img
+        alt="rock"
+        class="sc-AxirZ cQONtY"
+        src="icon-rock.svg"
+      />
+    </div>
+    <div
+      class="sc-AxjAm xIEIV"
+    >
+      <img
+        alt="lizard"
+        class="sc-AxirZ cQONtY"
+        src="icon-lizard.svg"
+      />
+    </div>
+    <div
+      class="sc-AxjAm kkliOx"
+    >
+      <img
+        alt="spock"
+        class="sc-AxirZ cQONtY"
+        src="icon-spock.svg"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
