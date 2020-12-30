@@ -3,22 +3,22 @@
 exports[`Header renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxhCb fOvtDg"
+    class="sc-AxhCb giPoSW"
   >
     <img
       alt="Logo"
-      class="sc-AxhUy bLqvIu"
+      class="sc-AxhUy fcbIvt"
     />
     <div
-      class="sc-AxjAm gMLAIV"
+      class="sc-AxjAm cUUMCg"
     >
       <h3
-        class="sc-AxirZ BhAjS"
+        class="sc-AxirZ fCOrbU"
       >
         score
       </h3>
       <div
-        class="sc-AxiKw bcQQe"
+        class="sc-AxiKw jcaSpX"
       />
     </div>
   </div>

@@ -9,13 +9,14 @@ const Container = styled.div`
   align-items: center;
 
   width: 100%;
-  padding: 1rem;
+  max-width: 70rem;
+  padding: clamp(1rem, 2vw, 1.7rem);
   border: 2px solid var(--gray);
   border-radius: 0.7rem;
 `;
 
 const LogoStyle = styled.img`
-  height: 4.7rem;
+  height: clamp(4.7rem, 7vw, 9.2rem);
 
   cursor: pointer;
 `;
