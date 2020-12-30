@@ -19,6 +19,16 @@ const HandContainer = styled.div`
     border-radius: 100%;
     background-color: var(--background-darker);
   }
+
+  @media (min-width: 650px) {
+    width: 20rem;
+    height: 20rem;
+
+    ::before {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
 `;
 
 const Placeholder = () => {
