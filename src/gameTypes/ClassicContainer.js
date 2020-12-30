@@ -27,6 +27,12 @@ const Container = styled.div`
     right: 0;
     bottom: 0;
   }
+
+  @media (min-width: 650px) {
+    width: 47rem;
+    height: 43rem;
+    background-size: 27rem;
+  }
 `;
 
 const ClassicContainer = ({ gameType, children }) => {

@@ -42,6 +42,20 @@ const Container = styled.div`
     left: 0;
     top: 8rem;
   }
+
+  @media (min-width: 650px) {
+    width: 47rem;
+    height: 43rem;
+    background-size: 30rem;
+
+    div:nth-child(1) {
+      top: 10rem;
+    }
+
+    div:nth-child(5) {
+      top: 10rem;
+    }
+  }
 `;
 
 const ExpansionContainer = ({ gameType, children }) => {
