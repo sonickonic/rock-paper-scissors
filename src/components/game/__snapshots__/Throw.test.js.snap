@@ -3,11 +3,13 @@
 exports[`Throw after bot selected hand renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxhUy lfNJJV"
+    class="sc-AxhUy cvuOTU"
   >
-    <div>
+    <div
+      class="sc-AxgMl jXNZVy"
+    >
       <div
-        class="sc-AxjAm hUUgft"
+        class="sc-AxjAm boSjhZ"
       >
         <img
           alt="paper"
@@ -16,14 +18,16 @@ exports[`Throw after bot selected hand renders correctly 1`] = `
         />
       </div>
       <p
-        class="sc-AxhCb fpVQKk"
+        class="sc-AxhCb irvhNx"
       >
         you picked
       </p>
     </div>
-    <div>
+    <div
+      class="sc-AxgMl jXNZVy"
+    >
       <div
-        class="sc-AxjAm gnslzt"
+        class="sc-AxjAm blSnYx"
       >
         <img
           alt="scissors"
@@ -32,7 +36,7 @@ exports[`Throw after bot selected hand renders correctly 1`] = `
         />
       </div>
       <p
-        class="sc-AxhCb fpVQKk"
+        class="sc-AxhCb irvhNx"
       >
         the house picked
       </p>
@@ -44,11 +48,13 @@ exports[`Throw after bot selected hand renders correctly 1`] = `
 exports[`Throw before bot selected hand renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxhUy lfNJJV"
+    class="sc-AxhUy cvuOTU"
   >
-    <div>
+    <div
+      class="sc-AxgMl jXNZVy"
+    >
       <div
-        class="sc-AxjAm hUUgft"
+        class="sc-AxjAm boSjhZ"
       >
         <img
           alt="paper"
@@ -57,17 +63,19 @@ exports[`Throw before bot selected hand renders correctly 1`] = `
         />
       </div>
       <p
-        class="sc-AxhCb fpVQKk"
+        class="sc-AxhCb irvhNx"
       >
         you picked
       </p>
     </div>
-    <div>
+    <div
+      class="sc-AxgMl jXNZVy"
+    >
       <div
         class="sc-AxiKw iMJUuS"
       />
       <p
-        class="sc-AxhCb fpVQKk"
+        class="sc-AxhCb irvhNx"
       >
         the house picked
       </p>
