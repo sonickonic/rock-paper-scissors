@@ -26,6 +26,15 @@ const Container = styled.div`
   padding: 3rem 3rem 5.5rem;
 `;
 
+const ButtonContainer = styled.div`
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: 650px) {
+    text-align: right;
+  }
+`;
+
 const Game = () => {
   const [gameType, setGameType] = useState(games[0]);
   const [isRulesOpen, setIsRulesOpen] = useState(false);
@@ -112,7 +121,9 @@ const Game = () => {
         <InitialGame gameType={gameType} handleSelection={handleSelection} />
       )}
       {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
-      <Button handleClick={toggleIsRulesOpen} label="Rules" />
+      <ButtonContainer>
+        <Button handleClick={toggleIsRulesOpen} label="Rules" />
+      </ButtonContainer>
       {isRulesOpen && (
         <Rules gameType={gameType} handleClick={toggleIsRulesOpen} />
       )}
