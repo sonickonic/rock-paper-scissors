@@ -25,6 +25,21 @@ const HandContainer = styled.div`
     background-color: var(--white);
     box-shadow: inset 0px 4px 0px rgba(0, 0, 0, 0.25);
   }
+
+  ::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    box-shadow: rgba(255, 255, 255, 0.03) 0px 0px 0px 25px,
+      rgba(255, 255, 255, 0.03) 0px 0px 0px 50px,
+      rgba(255, 255, 255, 0.03) 0px 0px 0px 75px;
+    opacity: ${(props) => (props.winner ? "1" : "0")};
+  }
 `;
 
 const Shape = styled.img`
@@ -35,13 +50,14 @@ const Shape = styled.img`
   transform: translate(-50%, -50%);
 `;
 
-const Hand = ({ shape, onClick, gameType }) => {
+const Hand = ({ shape, onClick, gameType, winner }) => {
   return (
     <HandContainer
       onClick={onClick}
       lightColor={shape.lightColor}
       darkColor={shape.darkColor}
       iconSize={gameType ? gameType.iconSize : "big"}
+      winner={winner === shape.name ? "winner" : null}
     >
       <Shape
         iconSize={gameType ? gameType.iconSize : "big"}

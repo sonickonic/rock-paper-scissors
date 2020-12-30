@@ -19,15 +19,19 @@ const Container = styled.div`
   justify-content: space-between;
 `;
 
-const Throw = ({ userSelectedHand, botSelectedHand }) => {
+const Throw = ({ userSelectedHand, botSelectedHand, winner }) => {
   return (
     <Container>
       <div>
-        <Hand shape={userSelectedHand} />
+        <Hand winner={winner} shape={userSelectedHand} />
         <Text>you picked</Text>
       </div>
       <div>
-        {botSelectedHand ? <Hand shape={botSelectedHand} /> : <Placeholder />}
+        {botSelectedHand ? (
+          <Hand winner={winner} shape={botSelectedHand} />
+        ) : (
+          <Placeholder />
+        )}
         <Text>the house picked</Text>
       </div>
     </Container>

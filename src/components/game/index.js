@@ -32,6 +32,7 @@ const Game = () => {
   const [userSelectedHand, setUserSelectedHand] = useState();
   const [botSelectedHand, setBotSelectedHand] = useState();
   const [result, setResult] = useState();
+  const [winner, setWinner] = useState();
   const [score, setScore] = useState(
     parseInt(localStorage.getItem("score")) || 0
   );
@@ -55,12 +56,16 @@ const Game = () => {
     if (userSelectedHand.beats.includes(botSelectedHand.name)) {
       setResult("win");
       setScore(score + 1);
+      setWinner(userSelectedHand.name);
     } else if (userSelectedHand.name.includes(botSelectedHand.name)) {
       setResult("draw");
+      setWinner();
     } else {
       setResult("lose");
       setScore(score - 1);
+      setWinner(botSelectedHand.name);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [botSelectedHand]);
 
   const handleSelection = (shape) => {
@@ -71,6 +76,7 @@ const Game = () => {
     setUserSelectedHand();
     setBotSelectedHand();
     setResult();
+    setWinner();
   };
 
   const handleClick = () => {
@@ -100,6 +106,7 @@ const Game = () => {
         <Throw
           botSelectedHand={botSelectedHand}
           userSelectedHand={userSelectedHand}
+          winner={winner}
         />
       ) : (
         <InitialGame gameType={gameType} handleSelection={handleSelection} />
