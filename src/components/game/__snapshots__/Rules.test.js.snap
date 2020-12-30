@@ -3,18 +3,19 @@
 exports[`Rules renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxiKw fbTzvK"
+    class="sc-AxiKw qAjNL"
   >
     <h3
-      class="sc-AxhUy jFsYCh"
+      class="sc-AxhUy gNFPyL"
     >
       rules
     </h3>
     <img
       alt="Game rules"
+      class="sc-AxgMl qlIKz"
     />
     <a
-      class="sc-AxhCb hcgjWe"
+      class="sc-AxhCb hbzvrW"
     >
       <img
         alt="Close button"
