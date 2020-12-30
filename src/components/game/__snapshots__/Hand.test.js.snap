@@ -3,11 +3,11 @@
 exports[`Hand renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxjAm hUUgft"
+    class="sc-AxjAm bVDfZd"
   >
     <img
       alt="paper"
-      class="sc-AxirZ hctvIa"
+      class="sc-AxirZ dtQZHs"
       src="icon-paper.svg"
     />
   </div>

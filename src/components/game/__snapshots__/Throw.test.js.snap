@@ -9,11 +9,11 @@ exports[`Throw after bot selected hand renders correctly 1`] = `
       class="sc-AxgMl jXNZVy"
     >
       <div
-        class="sc-AxjAm boSjhZ"
+        class="sc-AxjAm bVDfZd"
       >
         <img
           alt="paper"
-          class="sc-AxirZ hctvIa"
+          class="sc-AxirZ dtQZHs"
           src="icon-paper.svg"
         />
       </div>
@@ -27,11 +27,11 @@ exports[`Throw after bot selected hand renders correctly 1`] = `
       class="sc-AxgMl jXNZVy"
     >
       <div
-        class="sc-AxjAm blSnYx"
+        class="sc-AxjAm fvgMhd"
       >
         <img
           alt="scissors"
-          class="sc-AxirZ hctvIa"
+          class="sc-AxirZ dtQZHs"
           src="icon-scissors.svg"
         />
       </div>
@@ -54,11 +54,11 @@ exports[`Throw before bot selected hand renders correctly 1`] = `
       class="sc-AxgMl jXNZVy"
     >
       <div
-        class="sc-AxjAm boSjhZ"
+        class="sc-AxjAm bVDfZd"
       >
         <img
           alt="paper"
-          class="sc-AxirZ hctvIa"
+          class="sc-AxirZ dtQZHs"
           src="icon-paper.svg"
         />
       </div>

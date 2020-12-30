@@ -40,6 +40,24 @@ const HandContainer = styled.div`
       rgba(255, 255, 255, 0.03) 0px 0px 0px 75px;
     opacity: ${(props) => (props.winner ? "1" : "0")};
   }
+
+  @media (min-width: 650px) {
+    width: ${(props) => (props.iconSize === "small" ? "14.7rem" : "20rem")};
+    height: ${(props) => (props.iconSize === "small" ? "14.7rem" : "20rem")};
+    box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.25);
+
+    ::before {
+      width: ${(props) => (props.iconSize === "small" ? "10.9rem" : "15rem")};
+      height: ${(props) => (props.iconSize === "small" ? "10.9rem" : "15rem")};
+      box-shadow: inset 0px 8px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    ::after {
+      box-shadow: rgba(255, 255, 255, 0.03) 0px 0px 0px 60px,
+        rgba(255, 255, 255, 0.03) 0px 0px 0px 120px,
+        rgba(255, 255, 255, 0.03) 0px 0px 0px 180px;
+    }
+  }
 `;
 
 const Shape = styled.img`
@@ -48,6 +66,10 @@ const Shape = styled.img`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (min-width: 650px) {
+    width: ${(props) => (props.iconSize === "small" ? "5rem" : "7rem")};
+  }
 `;
 
 const Hand = ({ shape, onClick, gameType, winner }) => {

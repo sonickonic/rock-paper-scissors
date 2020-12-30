@@ -3,32 +3,32 @@
 exports[`InitialGame classic game renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxiKw cYYYVP"
+    class="sc-AxiKw bRGait"
   >
     <div
-      class="sc-AxjAm hUUgft"
+      class="sc-AxjAm bVDfZd"
     >
       <img
         alt="paper"
-        class="sc-AxirZ hctvIa"
+        class="sc-AxirZ dtQZHs"
         src="icon-paper.svg"
       />
     </div>
     <div
-      class="sc-AxjAm gnslzt"
+      class="sc-AxjAm fvgMhd"
     >
       <img
         alt="scissors"
-        class="sc-AxirZ hctvIa"
+        class="sc-AxirZ dtQZHs"
         src="icon-scissors.svg"
       />
     </div>
     <div
-      class="sc-AxjAm fhahUp"
+      class="sc-AxjAm ckhsNd"
     >
       <img
         alt="rock"
-        class="sc-AxirZ hctvIa"
+        class="sc-AxirZ dtQZHs"
         src="icon-rock.svg"
       />
     </div>
@@ -39,50 +39,50 @@ exports[`InitialGame classic game renders correctly 1`] = `
 exports[`InitialGame expansion game renders correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-AxhCb ATBCy"
+    class="sc-AxhCb hSmDqS"
   >
     <div
-      class="sc-AxjAm eMABbZ"
+      class="sc-AxjAm gQvrnB"
     >
       <img
         alt="paper"
-        class="sc-AxirZ cQONtY"
+        class="sc-AxirZ eMbVZM"
         src="icon-paper.svg"
       />
     </div>
     <div
-      class="sc-AxjAm cdByLZ"
+      class="sc-AxjAm kEAtnB"
     >
       <img
         alt="scissors"
-        class="sc-AxirZ cQONtY"
+        class="sc-AxirZ eMbVZM"
         src="icon-scissors.svg"
       />
     </div>
     <div
-      class="sc-AxjAm XjvgV"
+      class="sc-AxjAm jSYbZd"
     >
       <img
         alt="rock"
-        class="sc-AxirZ cQONtY"
+        class="sc-AxirZ eMbVZM"
         src="icon-rock.svg"
       />
     </div>
     <div
-      class="sc-AxjAm xIEIV"
+      class="sc-AxjAm bhcJld"
     >
       <img
         alt="lizard"
-        class="sc-AxirZ cQONtY"
+        class="sc-AxirZ eMbVZM"
         src="icon-lizard.svg"
       />
     </div>
     <div
-      class="sc-AxjAm kkliOx"
+      class="sc-AxjAm hvPtrl"
     >
       <img
         alt="spock"
-        class="sc-AxirZ cQONtY"
+        class="sc-AxirZ eMbVZM"
         src="icon-spock.svg"
       />
     </div>
