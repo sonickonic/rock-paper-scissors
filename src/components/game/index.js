@@ -56,7 +56,7 @@ const Game = () => {
     setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * gameType.shapes.length);
       setBotSelectedHand(shapes[randomIndex]);
-    }, 1000);
+    }, 300);
   }, [gameType.shapes.length, userSelectedHand]);
 
   useEffect(() => {
