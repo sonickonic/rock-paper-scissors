@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 const HandContainer = styled.div`
   position: relative;
@@ -72,17 +73,17 @@ const Shape = styled.img`
   }
 `;
 
-const Hand = ({ shape, onClick, gameType, winner }) => {
+const Hand = ({ shape, onClick, currentGame, winner }) => {
   return (
     <HandContainer
       onClick={onClick}
       lightColor={shape.lightColor}
       darkColor={shape.darkColor}
-      iconSize={gameType ? gameType.iconSize : "big"}
+      iconSize={currentGame ? currentGame.iconSize : "big"}
       winner={winner === shape.name ? "winner" : null}
     >
       <Shape
-        iconSize={gameType ? gameType.iconSize : "big"}
+        iconSize={currentGame ? currentGame.iconSize : "big"}
         src={shape.imageSrc}
         alt={shape.name}
       />
@@ -90,4 +91,8 @@ const Hand = ({ shape, onClick, gameType, winner }) => {
   );
 };
 
-export default Hand;
+const mapStateToProps = (state) => ({
+  currentGame: state.game.currentGame,
+});
+
+export default connect(mapStateToProps)(Hand);

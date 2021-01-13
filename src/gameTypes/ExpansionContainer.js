@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 const Container = styled.div`
   position: relative;
@@ -58,8 +59,12 @@ const Container = styled.div`
   }
 `;
 
-const ExpansionContainer = ({ gameType, children }) => {
-  return <Container background={gameType.background}>{children}</Container>;
+const ExpansionContainer = ({ currentGame, children }) => {
+  return <Container background={currentGame.background}>{children}</Container>;
 };
 
-export default ExpansionContainer;
+const mapStateToProps = (state) => ({
+  currentGame: state.game.currentGame,
+});
+
+export default connect(mapStateToProps)(ExpansionContainer);

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 import IconSrc from "../../images/icon-close.svg";
 
@@ -55,11 +56,11 @@ const Image = styled.img`
   width: 30rem;
 `;
 
-const Rules = ({ gameType, handleClick }) => {
+const Rules = ({ currentGame, handleClick }) => {
   return (
     <Container>
       <Title>rules</Title>
-      <Image alt="Game rules" src={gameType.rules} />
+      <Image alt="Game rules" src={currentGame.rules} />
       <CloseButton>
         <img onClick={handleClick} alt="Close button" src={IconSrc} />
       </CloseButton>
@@ -67,4 +68,8 @@ const Rules = ({ gameType, handleClick }) => {
   );
 };
 
-export default Rules;
+const mapStateToProps = (state) => ({
+  currentGame: state.game.currentGame,
+});
+
+export default connect(mapStateToProps)(Rules);

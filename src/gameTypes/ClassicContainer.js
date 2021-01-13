@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 const Container = styled.div`
   position: relative;
@@ -35,8 +36,12 @@ const Container = styled.div`
   }
 `;
 
-const ClassicContainer = ({ gameType, children }) => {
-  return <Container background={gameType.background}>{children}</Container>;
+const ClassicContainer = ({ currentGame, children }) => {
+  return <Container background={currentGame.background}>{children}</Container>;
 };
 
-export default ClassicContainer;
+const mapStateToProps = (state) => ({
+  currentGame: state.game.currentGame,
+});
+
+export default connect(mapStateToProps)(ClassicContainer);

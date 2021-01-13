@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-
+import { connect } from "react-redux";
+import { switchGame } from "../../actions";
 import Header from "../header";
 import Button from "../Button";
 import Rules from "./Rules";
@@ -8,7 +9,6 @@ import InitialGame from "./InitialGame";
 import Throw from "./Throw";
 import PlayAgain from "./PlayAgain";
 import shapes from "../../data";
-import games from "../../gameTypes";
 
 const Container = styled.div`
   display: flex;
@@ -35,8 +35,7 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Game = () => {
-  const [gameType, setGameType] = useState(games[0]);
+const Game = ({ currentGame, switchGame }) => {
   const [isRulesOpen, setIsRulesOpen] = useState(false);
   const [userSelectedHand, setUserSelectedHand] = useState();
   const [botSelectedHand, setBotSelectedHand] = useState();
@@ -54,10 +53,10 @@ const Game = () => {
     if (!userSelectedHand) return;
 
     setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * gameType.shapes.length);
+      const randomIndex = Math.floor(Math.random() * currentGame.shapes.length);
       setBotSelectedHand(shapes[randomIndex]);
     }, 300);
-  }, [gameType.shapes.length, userSelectedHand]);
+  }, [currentGame.shapes.length, userSelectedHand]);
 
   useEffect(() => {
     if (!botSelectedHand && botSelectedHand !== 0) return;
@@ -89,7 +88,7 @@ const Game = () => {
   };
 
   const handleClick = () => {
-    gameType === games[0] ? setGameType(games[1]) : setGameType(games[0]);
+    switchGame();
     setUserSelectedHand();
     setBotSelectedHand();
     setResult();
@@ -110,7 +109,7 @@ const Game = () => {
 
   return (
     <Container>
-      <Header score={score} gameType={gameType} handleClick={handleClick} />
+      <Header score={score} handleClick={handleClick} />
       {userSelectedHand ? (
         <Throw
           botSelectedHand={botSelectedHand}
@@ -118,17 +117,21 @@ const Game = () => {
           winner={winner}
         />
       ) : (
-        <InitialGame gameType={gameType} handleSelection={handleSelection} />
+        <InitialGame handleSelection={handleSelection} />
       )}
       {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
       <ButtonContainer>
         <Button handleClick={toggleIsRulesOpen} label="Rules" />
       </ButtonContainer>
-      {isRulesOpen && (
-        <Rules gameType={gameType} handleClick={toggleIsRulesOpen} />
-      )}
+      {isRulesOpen && <Rules handleClick={toggleIsRulesOpen} />}
     </Container>
   );
 };
 
-export default Game;
+const mapStateToProps = (state) => ({
+  currentGame: state.game.currentGame,
+});
+
+const mapDispatchToProps = { switchGame };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game);

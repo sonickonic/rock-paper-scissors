@@ -1,15 +1,15 @@
 import React from "react";
 import shapes from "../../data";
 import Hand from "./Hand";
+import { connect } from "react-redux";
 
-const InitialGame = ({ gameType, handleSelection }) => {
+const InitialGame = ({ currentGame, handleSelection }) => {
   return (
-    <gameType.container gameType={gameType}>
+    <currentGame.container>
       {shapes
-        .filter((shape) => gameType.shapes.includes(shape.name))
+        .filter((shape) => currentGame.shapes.includes(shape.name))
         .map((shape) => (
           <Hand
-            gameType={gameType}
             shape={shape}
             key={shape.name}
             onClick={() => {
@@ -17,8 +17,12 @@ const InitialGame = ({ gameType, handleSelection }) => {
             }}
           />
         ))}
-    </gameType.container>
+    </currentGame.container>
   );
 };
 
-export default InitialGame;
+const mapStateToProps = (state) => ({
+  currentGame: state.game.currentGame,
+});
+
+export default connect(mapStateToProps)(InitialGame);
