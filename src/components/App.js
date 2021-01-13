@@ -2,11 +2,7 @@ import React from "react";
 import Game from "./game";
 
 const App = () => {
-  return (
-    <div className="App">
-      <Game />
-    </div>
-  );
+  return <Game />;
 };
 
 export default App;
