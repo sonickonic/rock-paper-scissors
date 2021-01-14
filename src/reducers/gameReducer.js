@@ -6,6 +6,7 @@ const initialState = {
   userHand: false,
   botHand: false,
   winner: null,
+  result: null,
 };
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -43,6 +44,12 @@ const gameReducer = (state = initialState, action) => {
       return {
         ...state,
         winner: action.payload,
+      };
+    }
+    case "SET_RESULT": {
+      return {
+        ...state,
+        result: action.payload,
       };
     }
     default:

@@ -8,6 +8,7 @@ import {
   setUserHand,
   setBotHand,
   setWinner,
+  setResult,
 } from "../../actions";
 import Header from "../header";
 import Button from "../Button";
@@ -47,15 +48,16 @@ const Game = ({
   score,
   userHand,
   botHand,
+  result,
   switchGame,
   incrementScore,
   decrementScore,
   setUserHand,
   setBotHand,
   setWinner,
+  setResult,
 }) => {
   const [isRulesOpen, setIsRulesOpen] = useState(false);
-  const [result, setResult] = useState();
 
   useEffect(() => {
     localStorage.setItem("score", score);
@@ -123,7 +125,7 @@ const Game = ({
     <Container>
       <Header handleClick={handleClick} />
       {userHand ? <Throw /> : <InitialGame handleSelection={handleSelection} />}
-      {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
+      {result && <PlayAgain handleClick={clickPlayAgain} />}
       <ButtonContainer>
         <Button handleClick={toggleIsRulesOpen} label="Rules" />
       </ButtonContainer>
@@ -137,6 +139,7 @@ const mapStateToProps = (state) => ({
   score: state.game.score,
   userHand: state.game.userHand,
   botHand: state.game.botHand,
+  result: state.game.result,
 });
 
 const mapDispatchToProps = {
@@ -146,6 +149,7 @@ const mapDispatchToProps = {
   setUserHand,
   setBotHand,
   setWinner,
+  setResult,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

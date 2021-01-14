@@ -24,3 +24,8 @@ export const setWinner = (hand) => ({
   type: "SET_WINNER",
   payload: hand,
 });
+
+export const setResult = (result) => ({
+  type: "SET_RESULT",
+  payload: result,
+});
