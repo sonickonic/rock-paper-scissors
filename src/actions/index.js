@@ -19,3 +19,8 @@ export const setBotHand = (shape) => ({
   type: "SET_BOT_HAND",
   payload: shape,
 });
+
+export const setWinner = (hand) => ({
+  type: "SET_WINNER",
+  payload: hand,
+});

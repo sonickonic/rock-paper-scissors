@@ -61,6 +61,7 @@ const Throw = ({ userHand, botHand, winner }) => {
 const mapStateToProps = (state) => ({
   userHand: state.game.userHand,
   botHand: state.game.botHand,
+  winner: state.game.winner,
 });
 
 export default connect(mapStateToProps)(Throw);
