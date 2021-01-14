@@ -39,7 +39,7 @@ const HandContainer = styled.div`
   }
 `;
 
-const Throw = ({ userHand, botSelectedHand, winner }) => {
+const Throw = ({ userHand, botHand, winner }) => {
   return (
     <Container>
       <HandContainer>
@@ -47,8 +47,8 @@ const Throw = ({ userHand, botSelectedHand, winner }) => {
         <Text>you picked</Text>
       </HandContainer>
       <HandContainer>
-        {botSelectedHand ? (
-          <Hand winner={winner} shape={botSelectedHand} size="big" />
+        {botHand ? (
+          <Hand winner={winner} shape={botHand} size="big" />
         ) : (
           <Placeholder />
         )}
@@ -60,6 +60,7 @@ const Throw = ({ userHand, botSelectedHand, winner }) => {
 
 const mapStateToProps = (state) => ({
   userHand: state.game.userHand,
+  botHand: state.game.botHand,
 });
 
 export default connect(mapStateToProps)(Throw);

@@ -14,3 +14,8 @@ export const setUserHand = (shape) => ({
   type: "SET_USER_HAND",
   payload: shape,
 });
+
+export const setBotHand = (shape) => ({
+  type: "SET_BOT_HAND",
+  payload: shape,
+});

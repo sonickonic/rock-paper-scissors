@@ -4,6 +4,7 @@ const initialState = {
   currentGame: games[0],
   score: parseInt(localStorage.getItem("score")) || 0,
   userHand: false,
+  botHand: false,
 };
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -29,6 +30,12 @@ const gameReducer = (state = initialState, action) => {
       return {
         ...state,
         userHand: action.payload,
+      };
+    }
+    case "SET_BOT_HAND": {
+      return {
+        ...state,
+        botHand: action.payload,
       };
     }
     default:

@@ -6,6 +6,7 @@ import {
   incrementScore,
   decrementScore,
   setUserHand,
+  setBotHand,
 } from "../../actions";
 import Header from "../header";
 import Button from "../Button";
@@ -44,13 +45,14 @@ const Game = ({
   currentGame,
   score,
   userHand,
+  botHand,
   switchGame,
   incrementScore,
   decrementScore,
   setUserHand,
+  setBotHand,
 }) => {
   const [isRulesOpen, setIsRulesOpen] = useState(false);
-  const [botSelectedHand, setBotSelectedHand] = useState();
   const [result, setResult] = useState();
   const [winner, setWinner] = useState();
 
@@ -63,27 +65,27 @@ const Game = ({
 
     setTimeout(() => {
       const randomIndex = Math.floor(Math.random() * currentGame.shapes.length);
-      setBotSelectedHand(shapes[randomIndex]);
+      setBotHand(shapes[randomIndex]);
     }, 300);
-  }, [currentGame.shapes.length, userHand]);
+  }, [currentGame.shapes.length, setBotHand, userHand]);
 
   useEffect(() => {
-    if (!botSelectedHand && botSelectedHand !== 0) return;
+    if (!botHand && botHand !== 0) return;
 
-    if (userHand.beats.includes(botSelectedHand.name)) {
+    if (userHand.beats.includes(botHand.name)) {
       setResult("win");
       incrementScore();
       setWinner(userHand.name);
-    } else if (userHand.name.includes(botSelectedHand.name)) {
+    } else if (userHand.name.includes(botHand.name)) {
       setResult("draw");
       setWinner();
     } else {
       setResult("lose");
       decrementScore();
-      setWinner(botSelectedHand.name);
+      setWinner(botHand.name);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [botSelectedHand]);
+  }, [botHand]);
 
   const handleSelection = (shape) => {
     setUserHand(shape);
@@ -91,7 +93,7 @@ const Game = ({
 
   const clickPlayAgain = () => {
     setUserHand();
-    setBotSelectedHand();
+    setBotHand();
     setResult();
     setWinner();
   };
@@ -99,7 +101,7 @@ const Game = ({
   const handleClick = () => {
     switchGame();
     setUserHand();
-    setBotSelectedHand();
+    setBotHand();
     setResult();
   };
 
@@ -120,7 +122,7 @@ const Game = ({
     <Container>
       <Header handleClick={handleClick} />
       {userHand ? (
-        <Throw botSelectedHand={botSelectedHand} winner={winner} />
+        <Throw winner={winner} />
       ) : (
         <InitialGame handleSelection={handleSelection} />
       )}
@@ -137,6 +139,7 @@ const mapStateToProps = (state) => ({
   currentGame: state.game.currentGame,
   score: state.game.score,
   userHand: state.game.userHand,
+  botHand: state.game.botHand,
 });
 
 const mapDispatchToProps = {
@@ -144,6 +147,7 @@ const mapDispatchToProps = {
   incrementScore,
   decrementScore,
   setUserHand,
+  setBotHand,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
