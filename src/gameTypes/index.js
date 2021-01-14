@@ -15,7 +15,7 @@ const games = [
     logo: logo,
     background: triangle,
     rules: rules,
-    iconSize: "big",
+    size: "big",
     container: ClassicContainer,
   },
   {
@@ -24,7 +24,7 @@ const games = [
     logo: logoBonus,
     background: pentagon,
     rules: rulesBonus,
-    iconSize: "small",
+    size: "small",
     container: ExpansionContainer,
   },
 ];

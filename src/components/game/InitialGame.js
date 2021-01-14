@@ -15,6 +15,7 @@ const InitialGame = ({ currentGame, handleSelection }) => {
             onClick={() => {
               handleSelection(shape);
             }}
+            size={currentGame.size}
           />
         ))}
     </currentGame.container>

@@ -3,6 +3,7 @@ import games from "../gameTypes";
 const initialState = {
   currentGame: games[0],
   score: parseInt(localStorage.getItem("score")) || 0,
+  userHand: false,
 };
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -22,6 +23,12 @@ const gameReducer = (state = initialState, action) => {
       return {
         ...state,
         score: state.score - 1,
+      };
+    }
+    case "SET_USER_HAND": {
+      return {
+        ...state,
+        userHand: action.payload,
       };
     }
     default:

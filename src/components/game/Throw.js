@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 import Hand from "./Hand";
 import Placeholder from "./Placeholder";
@@ -38,16 +39,16 @@ const HandContainer = styled.div`
   }
 `;
 
-const Throw = ({ userSelectedHand, botSelectedHand, winner }) => {
+const Throw = ({ userHand, botSelectedHand, winner }) => {
   return (
     <Container>
       <HandContainer>
-        <Hand winner={winner} shape={userSelectedHand} />
+        <Hand winner={winner} shape={userHand} size="big" />
         <Text>you picked</Text>
       </HandContainer>
       <HandContainer>
         {botSelectedHand ? (
-          <Hand winner={winner} shape={botSelectedHand} />
+          <Hand winner={winner} shape={botSelectedHand} size="big" />
         ) : (
           <Placeholder />
         )}
@@ -57,4 +58,8 @@ const Throw = ({ userSelectedHand, botSelectedHand, winner }) => {
   );
 };
 
-export default Throw;
+const mapStateToProps = (state) => ({
+  userHand: state.game.userHand,
+});
+
+export default connect(mapStateToProps)(Throw);
