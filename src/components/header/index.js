@@ -22,11 +22,11 @@ const LogoStyle = styled.img`
   cursor: pointer;
 `;
 
-const Header = ({ currentGame, score, handleClick }) => {
+const Header = ({ currentGame, handleClick }) => {
   return (
     <Container>
       <LogoStyle alt="Logo" src={currentGame.logo} onClick={handleClick} />
-      <Score score={score} />
+      <Score />
     </Container>
   );
 };

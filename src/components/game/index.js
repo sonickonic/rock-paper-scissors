@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
-import { switchGame } from "../../actions";
+import { switchGame, incrementScore, decrementScore } from "../../actions";
 import Header from "../header";
 import Button from "../Button";
 import Rules from "./Rules";
@@ -35,15 +35,18 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Game = ({ currentGame, switchGame }) => {
+const Game = ({
+  currentGame,
+  score,
+  switchGame,
+  incrementScore,
+  decrementScore,
+}) => {
   const [isRulesOpen, setIsRulesOpen] = useState(false);
   const [userSelectedHand, setUserSelectedHand] = useState();
   const [botSelectedHand, setBotSelectedHand] = useState();
   const [result, setResult] = useState();
   const [winner, setWinner] = useState();
-  const [score, setScore] = useState(
-    parseInt(localStorage.getItem("score")) || 0
-  );
 
   useEffect(() => {
     localStorage.setItem("score", score);
@@ -63,14 +66,14 @@ const Game = ({ currentGame, switchGame }) => {
 
     if (userSelectedHand.beats.includes(botSelectedHand.name)) {
       setResult("win");
-      setScore(score + 1);
+      incrementScore();
       setWinner(userSelectedHand.name);
     } else if (userSelectedHand.name.includes(botSelectedHand.name)) {
       setResult("draw");
       setWinner();
     } else {
       setResult("lose");
-      setScore(score - 1);
+      decrementScore();
       setWinner(botSelectedHand.name);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -109,7 +112,7 @@ const Game = ({ currentGame, switchGame }) => {
 
   return (
     <Container>
-      <Header score={score} handleClick={handleClick} />
+      <Header handleClick={handleClick} />
       {userSelectedHand ? (
         <Throw
           botSelectedHand={botSelectedHand}
@@ -130,8 +133,9 @@ const Game = ({ currentGame, switchGame }) => {
 
 const mapStateToProps = (state) => ({
   currentGame: state.game.currentGame,
+  score: state.game.score,
 });
 
-const mapDispatchToProps = { switchGame };
+const mapDispatchToProps = { switchGame, incrementScore, decrementScore };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
