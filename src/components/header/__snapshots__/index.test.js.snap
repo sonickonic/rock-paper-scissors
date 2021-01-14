@@ -8,6 +8,7 @@ exports[`Header renders correctly 1`] = `
     <img
       alt="Logo"
       class="sc-AxhUy fcbIvt"
+      src="logo.svg"
     />
     <div
       class="sc-AxjAm cUUMCg"

@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import Hand from "./Hand";
-import shapes from "../../data";
+import shapes from "../data";
 
 describe("Hand", () => {
   it("renders correctly", () => {

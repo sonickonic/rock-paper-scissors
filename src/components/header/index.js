@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-
 import Score from "./Score";
 
 const Container = styled.div`
@@ -22,17 +20,13 @@ const LogoStyle = styled.img`
   cursor: pointer;
 `;
 
-const Header = ({ currentGame, handleClick }) => {
+const Header = ({ currentGame, handleClick, score }) => {
   return (
     <Container>
       <LogoStyle alt="Logo" src={currentGame.logo} onClick={handleClick} />
-      <Score />
+      <Score score={score} />
     </Container>
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentGame: state.game.currentGame,
-});
-
-export default connect(mapStateToProps)(Header);
+export default Header;

@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-
 import Hand from "./Hand";
 import Placeholder from "./Placeholder";
 
@@ -58,10 +56,4 @@ const Throw = ({ userHand, botHand, winner }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  userHand: state.game.userHand,
-  botHand: state.game.botHand,
-  winner: state.game.winner,
-});
-
-export default connect(mapStateToProps)(Throw);
+export default Throw;

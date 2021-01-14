@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
-
-import IconSrc from "../../images/icon-close.svg";
+import IconSrc from "../images/icon-close.svg";
 
 const Container = styled.div`
   display: flex;
@@ -68,8 +66,4 @@ const Rules = ({ currentGame, handleClick }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentGame: state.game.currentGame,
-});
-
-export default connect(mapStateToProps)(Rules);
+export default Rules;

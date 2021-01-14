@@ -13,6 +13,7 @@ exports[`Rules renders correctly 1`] = `
     <img
       alt="Game rules"
       class="sc-AxgMl qlIKz"
+      src="image-rules.svg"
     />
     <a
       class="sc-AxhCb hbzvrW"

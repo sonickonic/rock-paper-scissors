@@ -1,11 +1,12 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import gameType from "../../gameTypes";
+import gameType from "../gameTypes";
 import Rules from "./Rules";
 
 describe("Rules", () => {
+  const classic = gameType[0];
   it("renders correctly", () => {
-    const { asFragment } = render(<Rules gameType={gameType} />);
+    const { asFragment } = render(<Rules currentGame={classic} />);
 
     expect(asFragment()).toMatchSnapshot();
   });
@@ -13,7 +14,7 @@ describe("Rules", () => {
   it("calls handleClick prop on close", () => {
     const handleClick = jest.fn();
     const { queryByAltText } = render(
-      <Rules gameType={gameType} handleClick={handleClick} />
+      <Rules currentGame={classic} handleClick={handleClick} />
     );
 
     fireEvent.click(queryByAltText("Close button"));

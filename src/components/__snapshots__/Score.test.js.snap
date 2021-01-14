@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Score renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-AxjAm cUUMCg"
+  >
+    <h3
+      class="sc-AxirZ fCOrbU"
+    >
+      score
+    </h3>
+    <div
+      class="sc-AxiKw jcaSpX"
+    />
+  </div>
+</DocumentFragment>
+`;

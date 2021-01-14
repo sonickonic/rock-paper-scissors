@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { connect } from "react-redux";
 
 const Container = styled.div`
   text-align: center;
@@ -33,8 +32,4 @@ const Score = ({ score }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  score: state.game.score,
-});
-
-export default connect(mapStateToProps)(Score);
+export default Score;

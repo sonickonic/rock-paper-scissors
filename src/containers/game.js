@@ -9,14 +9,14 @@ import {
   setBotHand,
   setWinner,
   setResult,
-} from "../../actions";
-import Header from "../header";
-import Button from "../Button";
-import Rules from "./Rules";
-import InitialGame from "./InitialGame";
-import Throw from "./Throw";
-import PlayAgain from "./PlayAgain";
-import shapes from "../../data";
+} from "../actions";
+import Header from "../components/header";
+import Button from "../components/Button";
+import Rules from "../components/Rules";
+import InitialGame from "../components/InitialGame";
+import Throw from "../components/Throw";
+import PlayAgain from "../components/PlayAgain";
+import shapes from "../data";
 
 const Container = styled.div`
   display: flex;
@@ -48,6 +48,7 @@ const Game = ({
   score,
   userHand,
   botHand,
+  winner,
   result,
   switchGame,
   incrementScore,
@@ -123,13 +124,26 @@ const Game = ({
 
   return (
     <Container>
-      <Header handleClick={handleClick} />
-      {userHand ? <Throw /> : <InitialGame handleSelection={handleSelection} />}
-      {result && <PlayAgain handleClick={clickPlayAgain} />}
+      <Header
+        currentGame={currentGame}
+        score={score}
+        handleClick={handleClick}
+      />
+      {userHand ? (
+        <Throw userHand={userHand} botHand={botHand} winner={winner} />
+      ) : (
+        <InitialGame
+          currentGame={currentGame}
+          handleSelection={handleSelection}
+        />
+      )}
+      {result && <PlayAgain result={result} handleClick={clickPlayAgain} />}
       <ButtonContainer>
         <Button handleClick={toggleIsRulesOpen} label="Rules" />
       </ButtonContainer>
-      {isRulesOpen && <Rules handleClick={toggleIsRulesOpen} />}
+      {isRulesOpen && (
+        <Rules currentGame={currentGame} handleClick={toggleIsRulesOpen} />
+      )}
     </Container>
   );
 };
@@ -139,6 +153,7 @@ const mapStateToProps = (state) => ({
   score: state.game.score,
   userHand: state.game.userHand,
   botHand: state.game.botHand,
+  winner: state.game.winner,
   result: state.game.result,
 });
 

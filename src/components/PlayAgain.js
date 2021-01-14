@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../Button";
-import { connect } from "react-redux";
+import Button from "./Button";
 
 const Title = styled.p`
   text-align: center;
@@ -30,8 +29,4 @@ const PlayAgain = ({ handleClick, result }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  result: state.game.result,
-});
-
-export default connect(mapStateToProps)(PlayAgain);
+export default PlayAgain;

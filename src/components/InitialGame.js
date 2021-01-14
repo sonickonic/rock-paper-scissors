@@ -1,11 +1,10 @@
 import React from "react";
-import shapes from "../../data";
+import shapes from "../data";
 import Hand from "./Hand";
-import { connect } from "react-redux";
 
 const InitialGame = ({ currentGame, handleSelection }) => {
   return (
-    <currentGame.container>
+    <currentGame.container currentGame={currentGame}>
       {shapes
         .filter((shape) => currentGame.shapes.includes(shape.name))
         .map((shape) => (
@@ -22,8 +21,4 @@ const InitialGame = ({ currentGame, handleSelection }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentGame: state.game.currentGame,
-});
-
-export default connect(mapStateToProps)(InitialGame);
+export default InitialGame;
